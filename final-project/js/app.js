@@ -35,5 +35,3 @@ function updateCartCount() {
 // Initialize
 displayFlavors();
 updateCartCount();
-
-
