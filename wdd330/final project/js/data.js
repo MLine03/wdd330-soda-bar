@@ -1,26 +1,23 @@
+// Soda flavor data
 const sodas = [
   {
-    id: 1,
-    name: "Cherry Cola",
+    name: "Blueberry",
     price: 2.5,
-    image: "assets/images/cherry.jpg"
+    image: "soda-bar-app/assets/images/blueberry.jpg"
   },
   {
-    id: 2,
-    name: "Blue Raspberry",
-    price: 2.75,
-    image: "assets/images/blueberry.jpg"
+    name: "Cherry",
+    price: 2.5,
+    image: "soda-bar-app/assets/images/cherry.jpg"
   },
   {
-    id: 3,
-    name: "Vanilla Cream",
-    price: 3.0,
-    image: "assets/images/vanilla.jpg"
+    name: "Lime",
+    price: 2.5,
+    image: "soda-bar-app/assets/images/lime.jpg"
   },
   {
-    id: 4,
-    name: "Lime Fizz",
-    price: 2.25,
-    image: "assets/images/lime.jpg"
+    name: "Vanilla",
+    price: 2.5,
+    image: "soda-bar-app/assets/images/vanilla.jpg"
   }
 ];
