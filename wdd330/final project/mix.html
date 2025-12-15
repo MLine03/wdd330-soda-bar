@@ -2,29 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mix Your Drink</title>
+  <title>Mix Your Soda - Soda Bar</title>
+  <meta name="description" content="Mix your dream soda – choose flavors, colors, and fizzy fun at Soda Bar.">
 
-  <meta name="description" content="Create a custom soda mix using pink and violet flavors at Soda Bar.">
-
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
 <header>
-  <h1>✨ Mix Your Soda</h1>
+  <h1>🥤 Soda Bar - Mix</h1>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./mix.html">Mix</a>
+    <a href="./cart.html">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
 </header>
 
-<div class="mix-box">
-  <select id="flavorSelect"></select>
-  <button onclick="addFlavor()">Add Flavor</button>
+<main id="mixSection" class="grid"></main>
 
-  <p id="mixList">Flavors:</p>
-  <h3>Total: $<span id="total">0.00</span></h3>
-</div>
+<footer>
+  <p>© 2025 Soda Bar</p>
+</footer>
 
-<script src="js/data.js"></script>
-<script src="js/mix.js"></script>
+<script src="./js/data.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/mix.js"></script>
 </body>
 </html>
-

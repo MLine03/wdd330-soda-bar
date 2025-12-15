@@ -2,27 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Cart</title>
+  <title>Cart - Soda Bar</title>
+  <meta name="description" content="Your Soda Bar cart – review your selected drinks and proceed to checkout.">
 
-  <meta name="description" content="View your Soda Bar cart and checkout your custom soda order.">
-
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
 <header>
-  <h1>🛒 Your Cart</h1>
+  <h1>🥤 Soda Bar - Cart</h1>
+  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./mix.html">Mix</a>
+    <a href="./cart.html">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
 </header>
 
-<ul id="cartItems"></ul>
-<h3>Total: $<span id="cartTotal">0.00</span></h3>
+<main id="cartItems" class="grid"></main>
 
-<a href="confirm.html">
-  <button>Checkout</button>
-</a>
+<footer>
+  <p>© 2025 Soda Bar</p>
+</footer>
 
-<script src="js/cart.js"></script>
+<script src="./js/cart.js"></script>
 </body>
 </html>
 
