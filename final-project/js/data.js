@@ -1,23 +1,6 @@
-// Soda flavor data
-const sodas = [
-  {
-    name: "Blueberry",
-    price: 2.5,
-    image: "soda-bar-app/assets/images/blueberry.jpg"
-  },
-  {
-    name: "Cherry",
-    price: 2.5,
-    image: "soda-bar-app/assets/images/cherry.jpg"
-  },
-  {
-    name: "Lime",
-    price: 2.5,
-    image: "soda-bar-app/assets/images/lime.jpg"
-  },
-  {
-    name: "Vanilla",
-    price: 2.5,
-    image: "soda-bar-app/assets/images/vanilla.jpg"
-  }
+const flavors = [
+  { name: "Zesty Lime Fizz", price: 2.5, img: "images/lime.jpg" },
+  { name: "Cherry Blast", price: 2.5, img: "images/cherry.jpg" },
+  { name: "Blueberry Dream", price: 2.5, img: "images/blueberry.jpg" },
+  { name: "Galaxy Pop", price: 3.0, img: "images/hero-drink.jpg" }
 ];
