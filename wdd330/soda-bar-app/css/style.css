@@ -1,0 +1,109 @@
+:root {
+  --pink: #ff5fa2;
+  --hot-pink: #ff2f92;
+  --violet: #8b5cf6;
+  --light-violet: #e9d5ff;
+  --bg: #fff0f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background: var(--bg);
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, var(--hot-pink), var(--violet));
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin-left: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  background:
+    linear-gradient(rgba(255,95,162,0.75), rgba(139,92,246,0.75)),
+    url("../assets/images/hero-drink.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* CARD */
+.card {
+  background: linear-gradient(135deg, white, var(--light-violet));
+  padding: 1rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(255,95,162,0.25);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* BUTTON */
+button {
+  background: linear-gradient(135deg, var(--pink), var(--violet));
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* MIX BOX */
+.mix-box {
+  background: linear-gradient(135deg, var(--pink), var(--violet));
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #555;
+}

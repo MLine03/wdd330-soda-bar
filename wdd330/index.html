@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Soda Bar App - Explore colorful drinks with pink and violet themes.">
+  <title>Soda Bar App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Soda Bar App</h1>
+    <nav>
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="menu">
+      <h2>Our Drinks</h2>
+      <div class="drink-list">
+        <article class="drink">
+          <img src="images/blueberry.jpg" alt="Blueberry Soda" width="400" height="300">
+          <h3>Blueberry Soda</h3>
+          <p>Refreshing blueberry flavor with a hint of violet.</p>
+        </article>
+        <article class="drink">
+          <img src="images/strawberry.jpg" alt="Strawberry Soda" width="400" height="300">
+          <h3>Strawberry Soda</h3>
+          <p>Sweet strawberry drink with pink tones.</p>
+        </article>
+        <!-- Add more drinks here -->
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="images/photo1.jpg" alt="Pink drink with garnish" width="400" height="300">
+        <img src="images/photo2.jpg" alt="Violet soda in glass" width="400" height="300">
+        <!-- Add more images -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Soda Bar App. All rights reserved.</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+

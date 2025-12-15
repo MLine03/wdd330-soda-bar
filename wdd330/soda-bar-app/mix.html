@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mix Your Drink</title>
+
+  <meta name="description" content="Create a custom soda mix using pink and violet flavors at Soda Bar.">
+
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <h1>✨ Mix Your Soda</h1>
+</header>
+
+<div class="mix-box">
+  <select id="flavorSelect"></select>
+  <button onclick="addFlavor()">Add Flavor</button>
+
+  <p id="mixList">Flavors:</p>
+  <h3>Total: $<span id="total">0.00</span></h3>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/mix.js"></script>
+</body>
+</html>
+
