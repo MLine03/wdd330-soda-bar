@@ -1,44 +1,39 @@
-// Get main container
-const flavorList = document.getElementById("flavorList");
+const flavorList = document.getElementById('flavorList');
+const cartCount = document.getElementById('cartCount');
 
-// Render soda flavors dynamically
-function renderFlavors() {
-  flavorList.innerHTML = ""; // Clear previous content
-  sodas.forEach(soda => {
-    const card = document.createElement("div");
-    card.className = "card";
+// Initialize cart as an empty array
+let cart = [];
+
+// Display all flavors
+function displayFlavors() {
+  flavors.forEach((flavor, index) => {
+    const card = document.createElement('div');
+    card.classList.add('flavor-card');
 
     card.innerHTML = `
-      <img src="${soda.image}" alt="${soda.name}">
-      <h3>${soda.name}</h3>
-      <p>$${soda.price.toFixed(2)}</p>
-      <button onclick="addToCart('${soda.name}', ${soda.price})">Add to Cart</button>
+      <img src="${flavor.img}" alt="${flavor.name}">
+      <h3>${flavor.name}</h3>
+      <p>$${flavor.price.toFixed(2)}</p>
+      <button onclick="addToCart(${index})">Add to Cart</button>
     `;
+
     flavorList.appendChild(card);
   });
 }
 
-// Cart handling
-let cart = [];
-const cartCount = document.getElementById("cartCount");
+// Add a flavor to the cart
+function addToCart(index) {
+  cart.push(flavors[index]);
+  updateCartCount();
+  alert(`${flavors[index].name} added to cart!`);
+}
 
-function addToCart(name, price) {
-  cart.push({ name, price });
+// Update cart count display
+function updateCartCount() {
   cartCount.textContent = cart.length;
-  console.log(cart);
 }
 
 // Initialize
-renderFlavors();
-
-
-function addToCart(id) {
-  const soda = sodas.find(s => s.id === id);
-  cart.push({ ...soda, qty: 1 });
-  localStorage.setItem("cart", JSON.stringify(cart));
-  document.getElementById("cartCount").innerText = cart.length;
-}
-
-renderFlavors();
-document.getElementById("cartCount").innerText = cart.length;
+displayFlavors();
+updateCartCount();
 
