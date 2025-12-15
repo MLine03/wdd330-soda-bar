@@ -6,3 +6,4 @@ const flavors = [
   { name: "Strawberry Spark", price: 2.5, img: "images/strawberry.jpg" },
   { name: "Galaxy Pop", price: 3.0, img: "images/hero-drink.jpg" }
 ];
+

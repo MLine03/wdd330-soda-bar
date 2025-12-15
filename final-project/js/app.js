@@ -1,10 +1,9 @@
 const flavorList = document.getElementById('flavorList');
 const cartCount = document.getElementById('cartCount');
 
-// Initialize cart as an empty array
-let cart = [];
+let cart = []; // Initialize cart
 
-// Display all flavors
+// Display flavors dynamically
 function displayFlavors() {
   flavors.forEach((flavor, index) => {
     const card = document.createElement('div');
@@ -36,4 +35,5 @@ function updateCartCount() {
 // Initialize
 displayFlavors();
 updateCartCount();
+
 
