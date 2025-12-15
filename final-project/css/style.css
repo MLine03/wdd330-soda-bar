@@ -1,173 +1,62 @@
-/* ===============================
-   Global Styles
-=============================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #fff8f0;
-  color: #333;
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: #FF3B3F;
+  margin: 0;
+  padding: 0;
+  background-color: #fff0f5;
 }
 
 header {
-  background-color: #FFD700;
-  padding: 1rem 2rem;
+  background-color: #FF3B3F;
+  color: #fff;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header h1 {
-  font-family: 'Bubblegum Sans', cursive;
-  font-size: 2rem;
-}
-
-nav ul {
+header nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  margin: 0;
 }
 
-nav ul li a:hover {
-  color: #00BFFF;
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* ===============================
-   Hero Section
-=============================== */
-.hero {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #FF3B3F, #FFD700, #00BFFF);
-  color: white;
+main {
+  padding: 2rem;
 }
 
-.hero h2 {
-  font-family: 'Bubblegum Sans', cursive;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* ===============================
-   Drink List
-=============================== */
 .drink-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  padding: 2rem;
-}
-
-.drink {
-  background-color: #fff;
-  border: 2px solid #FFD700;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.drink:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .drink img {
   width: 100%;
-  height: auto;
+  border-radius: 10px;
 }
 
 .drink h3 {
-  font-family: 'Bubblegum Sans', cursive;
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 1rem 0 0.5rem 0;
+  color: #FF3B3F;
+  margin: 0.5rem 0;
 }
 
-.drink p {
-  padding: 0 1rem 1rem 1rem;
-  text-align: center;
-  font-size: 1rem;
-}
-
-/* ===============================
-   Gallery
-=============================== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  padding: 2rem;
+  margin-top: 1rem;
 }
 
-.gallery-grid img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.05);
-}
-
-/* ===============================
-   Contact Section
-=============================== */
-#contact {
-  background-color: #00BFFF;
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-#contact p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-}
-
-/* ===============================
-   Footer
-=============================== */
 footer {
-  background-color: #FF3B3F;
-  color: white;
   text-align: center;
   padding: 1rem;
+  background-color: #FFD700;
 }
 
-/* ===============================
-   Responsive
-=============================== */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .drink h3 {
-    font-size: 1.2rem;
-  }
-}
