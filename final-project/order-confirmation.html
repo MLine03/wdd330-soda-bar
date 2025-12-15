@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Order Confirmation</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <header>
-<div class="logo">🍹 Soda Bar</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="mix.html">Mix</a>
-<a href="cart.html">Cart</a>
-<a href="order-confirmation.html">History</a>
-</nav>
+  <h1>✅ Order Confirmed!</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mix.html">Mix</a>
+    <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
 </header>
 
 <main>
-<h2>Order Confirmed! 🎉</h2>
-<div id="orderDetails"></div>
-<button onclick="window.location='index.html'">Back to Home</button>
+  <p>Thank you for your order! 🎉</p>
 </main>
 
 <footer>
-<p>Contact | Social Media Links</p>
+  <p>© 2025 Soda Bar</p>
 </footer>
 
-<script type="module" src="js/orderHistory.js"></script>
-<script type="module" src="js/animations.js"></script>
-<script type="module">
-import { displayOrderDetails } from './js/orderHistory.js';
-import { showConfetti } from './js/animations.js';
-displayOrderDetails();
-showConfetti();
-</script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
