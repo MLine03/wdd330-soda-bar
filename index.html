@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Soda Bar App – mix your own soda, explore fizzy flavors, and order drinks.">
   <title>Soda Bar App</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
@@ -27,14 +27,35 @@
   <main>
     <section id="menu">
       <h2>Our Drinks</h2>
-      <button id="loadDrinks">Load Drinks</button>
-      <div id="drinkList" class="drink-list"></div>
+      <div class="drink-list">
+        <article class="drink">
+          <img src="assets/images/blueberry-soda.jpg" alt="Blueberry Soda">
+          <h3>Blueberry Soda</h3>
+          <p>Refreshing blueberry flavor with a hint of violet.</p>
+        </article>
+        <article class="drink">
+          <img src="assets/images/starwberry-soda.jpg" alt="Strawberry Soda">
+          <h3>Strawberry Soda</h3>
+          <p>Sweet strawberry drink with pink tones.</p>
+        </article>
+        <article class="drink">
+          <img src="assets/images/cherry-brust.jpg" alt="Cherry Burst Soda">
+          <h3>Cherry Burst Soda</h3>
+          <p>Bold cherry flavor with a fizzy kick.</p>
+        </article>
+        <article class="drink">
+          <img src="assets/images/galaxy-pop.jpg" alt="Galaxy Pop Soda">
+          <h3>Galaxy Pop Soda</h3>
+          <p>Fruity soda with sparkling rainbow effect.</p>
+        </article>
+      </div>
     </section>
 
     <section id="gallery">
       <h2>Gallery</h2>
       <div class="gallery-grid">
-        <!-- dynamically populated from JS if desired -->
+        <img src="assets/images/hero-drink.jpg" alt="Hero Drink">
+        <img src="assets/images/lime-fizz.jpg" alt="Lime Fizz Drink">
       </div>
     </section>
 
