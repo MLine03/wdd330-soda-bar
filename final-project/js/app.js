@@ -1,41 +1,48 @@
-import { drinks } from './data.js';
+// app.js — Final Project Rubric Requirements
 
-const drinkList = document.querySelector('.drink-list');
-const galleryGrid = document.querySelector('.gallery-grid');
+const drinkList = document.getElementById("drinkList");
+const loadBtn = document.getElementById("loadDrinks");
 
-// Generate drinks menu dynamically
-drinks.forEach(drink => {
-  const div = document.createElement('article');
-  div.className = 'drink';
-  div.innerHTML = `
-    <img src="${drink.image}" alt="${drink.name}" width="400" height="300">
-    <h3>${drink.name}</h3>
-    <p>${drink.desc}</p>
-  `;
-  drinkList.appendChild(div);
-});
+// LOCAL STORAGE (REQUIRED)
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Populate gallery with the same drink images
-drinks.forEach(drink => {
-  const img = document.createElement('img');
-  img.src = drink.image;
-  img.alt = drink.name;
-  galleryGrid.appendChild(img);
-});
+// EVENT LISTENER (REQUIRED)
+loadBtn.addEventListener("click", loadDrinks);
 
-// Example of integrating a third-party API (Unsplash random drink image)
-async function loadRandomDrinkImage() {
+// API #1 — TheCocktailDB (JSON)
+async function loadDrinks() {
+  drinkList.innerHTML = "<p>Loading drinks...</p>";
+
   try {
-    const response = await fetch('https://api.unsplash.com/photos/random?query=soda&client_id=YOUR_UNSPLASH_ACCESS_KEY');
-    const data = await response.json();
-    const img = document.createElement('img');
-    img.src = data.urls.small;
-    img.alt = data.alt_description || "Random Soda Image";
-    galleryGrid.appendChild(img);
+    const response = await fetch(
+      "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=soda"
+    );
+
+    const data = await response.json(); // JSON processing (REQUIRED)
+
+    drinkList.innerHTML = "";
+
+    data.drinks.slice(0, 4).forEach(drink => {
+      const card = document.createElement("article");
+      card.className = "drink";
+
+      card.innerHTML = `
+        <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
+        <h3>${drink.strDrink}</h3>
+        <button>Add to Cart</button>
+      `;
+
+      // EVENT + LOCAL STORAGE
+      card.querySelector("button").addEventListener("click", () => {
+        cart.push(drink.strDrink);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${drink.strDrink} added to cart`);
+      });
+
+      drinkList.appendChild(card);
+    });
   } catch (error) {
-    console.error("Error fetching Unsplash image:", error);
+    drinkList.innerHTML = "<p>Failed to load drinks.</p>";
+    console.error(error);
   }
 }
-
-// Load one random soda image dynamically
-loadRandomDrinkImage();
