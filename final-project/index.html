@@ -27,7 +27,8 @@
   <main>
     <section id="menu">
       <h2>Our Drinks</h2>
-      <div class="drink-list"></div>
+      <button id="loadDrinks">Load Featured Drinks</button>
+      <div class="drink-list" id="drinkList"></div>
     </section>
 
     <section id="gallery">
@@ -38,9 +39,21 @@
     <section id="contact">
       <h2>Contact Us</h2>
       <form>
-        <label>Name: <input type="text" name="name" autocomplete="name" required></label>
-        <label>Email: <input type="email" name="email" autocomplete="email" required></label>
-        <label>Message: <textarea name="message" required></textarea></label>
+        <label>
+          Name:
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+
+        <label>
+          Email:
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+
+        <label>
+          Message:
+          <textarea name="message" required></textarea>
+        </label>
+
         <button type="submit">Send</button>
       </form>
     </section>
@@ -50,7 +63,7 @@
     <p>© 2025 Soda Bar App. All rights reserved.</p>
   </footer>
 
+  <!-- ES Module JavaScript -->
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
-
