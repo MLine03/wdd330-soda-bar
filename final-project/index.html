@@ -1,72 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Soda Bar App – Explore fizzy, colorful drinks. Mix your dream soda and order for pickup!">
-  <title>Soda Bar App</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Soda Bar App – Explore colorful, custom fizzy drinks. Mix your dream soda and order for fast pickup!">
+    <title>Soda Bar App</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <header>
+        <h1>🥤 Soda Bar App</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-  <h1>🥤 Soda Bar</h1>
-  <nav>
-    <ul>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <section class="hero">
+        <h2>Mix Your Dream Soda 💖</h2>
+        <p>Refreshing • Fizzy • Custom</p>
+    </section>
 
-<main>
-  <section id="menu">
-    <h2>Our Drinks</h2>
-    <div class="drink-list">
-      <article class="drink">
-        <img src="images/blueberry-bliss.jpg" alt="Blueberry Bliss Soda" width="400" height="300">
-        <h3>Blueberry Bliss</h3>
-        <p>Refreshing blueberry flavor with a hint of violet.</p>
-      </article>
-      <article class="drink">
-        <img src="images/strawberry-spark.jpg" alt="Strawberry Spark Soda" width="400" height="300">
-        <h3>Strawberry Spark</h3>
-        <p>Sweet strawberry drink with pink tones.</p>
-      </article>
-      <article class="drink">
-        <img src="images/lime-zest.jpg" alt="Lime Zest Soda" width="400" height="300">
-        <h3>Lime Zest</h3>
-        <p>Zesty lime flavor with a sparkling twist.</p>
-      </article>
-      <article class="drink">
-        <img src="images/cherry-burst.jpg" alt="Cherry Burst Soda" width="400" height="300">
-        <h3>Cherry Burst</h3>
-        <p>Rich cherry soda with a sweet, fizzy finish.</p>
-      </article>
-    </div>
-  </section>
+    <main>
+        <!-- Menu Section -->
+        <section id="menu">
+            <h2>Our Drinks</h2>
+            <div class="drink-list">
+                <article class="drink">
+                    <img src="images/blueberry-soda.jpg" alt="Blueberry Bliss Soda" width="400" height="300">
+                    <h3>Blueberry Bliss</h3>
+                    <p>Refreshing blueberry flavor with a hint of violet sparkle.</p>
+                </article>
+                <article class="drink">
+                    <img src="images/strawberry-soda.jpg" alt="Strawberry Spark Soda" width="400" height="300">
+                    <h3>Strawberry Spark</h3>
+                    <p>Sweet strawberry fizz with pink-hued delight.</p>
+                </article>
+                <article class="drink">
+                    <img src="images/lime-fizz.jpg" alt="Lime Fizz Soda" width="400" height="300">
+                    <h3>Lime Fizz</h3>
+                    <p>Zesty lime with a bubbly twist for a refreshing punch.</p>
+                </article>
+                <article class="drink">
+                    <img src="images/cherry-burst.jpg" alt="Cherry Burst Soda" width="400" height="300">
+                    <h3>Cherry Burst</h3>
+                    <p>Bold cherry flavor with fizzy fun in every sip.</p>
+                </article>
+                <article class="drink">
+                    <img src="images/hero-drink.jpg" alt="Hero Drink Soda" width="400" height="300">
+                    <h3>Hero Drink</h3>
+                    <p>Signature soda blend for those who crave adventure!</p>
+                </article>
+            </div>
+        </section>
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="images/blueberry-bliss.jpg" alt="Blueberry Bliss Soda">
-      <img src="images/strawberry-spark.jpg" alt="Strawberry Spark Soda">
-      <img src="images/lime-zest.jpg" alt="Lime Zest Soda">
-      <img src="images/cherry-burst.jpg" alt="Cherry Burst Soda">
-    </div>
-  </section>
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="images/blueberry-soda.jpg" alt="Blueberry Bliss Soda">
+                <img src="images/strawberry-soda.jpg" alt="Strawberry Spark Soda">
+                <img src="images/lime-fizz.jpg" alt="Lime Fizz Soda">
+                <img src="images/cherry-burst.jpg" alt="Cherry Burst Soda">
+                <img src="images/hero-drink.jpg" alt="Hero Drink Soda">
+            </div>
+        </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: contact@sodabar.com | Phone: 555-1234</p>
-  </section>
-</main>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-<footer>
-  <p>© 2025 Soda Bar</p>
-</footer>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-<script src="js/scripts.js"></script>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Soda Bar App. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>
