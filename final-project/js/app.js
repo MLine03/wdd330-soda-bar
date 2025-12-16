@@ -1,37 +1,41 @@
-const flavorList = document.getElementById('flavorList');
-const cartCount = document.getElementById('cartCount');
+import { drinks } from './data.js';
 
-let cart = []; // Initialize cart
+const drinkList = document.querySelector('.drink-list');
+const galleryGrid = document.querySelector('.gallery-grid');
 
-// Display flavors dynamically
-function displayFlavors() {
-  flavors.forEach((flavor, index) => {
-    const card = document.createElement('div');
-    card.classList.add('flavor-card');
+// Generate drinks menu dynamically
+drinks.forEach(drink => {
+  const div = document.createElement('article');
+  div.className = 'drink';
+  div.innerHTML = `
+    <img src="${drink.image}" alt="${drink.name}" width="400" height="300">
+    <h3>${drink.name}</h3>
+    <p>${drink.desc}</p>
+  `;
+  drinkList.appendChild(div);
+});
 
-    card.innerHTML = `
-      <img src="${flavor.img}" alt="${flavor.name}">
-      <h3>${flavor.name}</h3>
-      <p>$${flavor.price.toFixed(2)}</p>
-      <button onclick="addToCart(${index})">Add to Cart</button>
-    `;
+// Populate gallery with the same drink images
+drinks.forEach(drink => {
+  const img = document.createElement('img');
+  img.src = drink.image;
+  img.alt = drink.name;
+  galleryGrid.appendChild(img);
+});
 
-    flavorList.appendChild(card);
-  });
+// Example of integrating a third-party API (Unsplash random drink image)
+async function loadRandomDrinkImage() {
+  try {
+    const response = await fetch('https://api.unsplash.com/photos/random?query=soda&client_id=YOUR_UNSPLASH_ACCESS_KEY');
+    const data = await response.json();
+    const img = document.createElement('img');
+    img.src = data.urls.small;
+    img.alt = data.alt_description || "Random Soda Image";
+    galleryGrid.appendChild(img);
+  } catch (error) {
+    console.error("Error fetching Unsplash image:", error);
+  }
 }
 
-// Add a flavor to the cart
-function addToCart(index) {
-  cart.push(flavors[index]);
-  updateCartCount();
-  alert(`${flavors[index].name} added to cart!`);
-}
-
-// Update cart count display
-function updateCartCount() {
-  cartCount.textContent = cart.length;
-}
-
-// Initialize
-displayFlavors();
-updateCartCount();
+// Load one random soda image dynamically
+loadRandomDrinkImage();
