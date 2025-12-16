@@ -1,67 +1,75 @@
-// app.js — Final Project Rubric Requirements
+// ======= Soda Bar App JS =======
 
-const drinkList = document.getElementById("drinkList");
-const loadBtn = document.getElementById("loadDrinks");
+// DOM Elements
+const drinkList = document.querySelector(".drink-list");
+const galleryGrid = document.querySelector(".gallery-grid");
 
-// LOCAL STORAGE (REQUIRED)
+// ======= Local Storage for Cart =======
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// EVENT LISTENER (REQUIRED)
-loadBtn.addEventListener("click", loadDrinks);
-
-// API #1 — TheCocktailDB (JSON)
+// ======= Load Drinks from API #1 (TheCocktailDB) =======
 async function loadDrinks() {
   drinkList.innerHTML = "<p>Loading drinks...</p>";
-
   try {
-    const response = await fetch(
-      "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=soda"
-    );
+    const res = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=soda");
+    const data = await res.json();
 
-    const data = await response.json(); // JSON processing (REQUIRED)
     drinkList.innerHTML = "";
-
-    data.drinks.slice(0, 4).forEach(async (drink) => {
+    data.drinks.slice(0, 4).forEach(drink => {
       const card = document.createElement("article");
       card.className = "drink";
-
-      // API #2 — Giphy for fun soda GIF
-      const gifUrl = await fetchGif(drink.strDrink);
-
       card.innerHTML = `
         <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
         <h3>${drink.strDrink}</h3>
-        ${gifUrl ? `<img src="${gifUrl}" alt="${drink.strDrink} GIF" class="drink-gif">` : ''}
+        <p>${drink.strInstructions.substring(0, 50)}...</p>
         <button>Add to Cart</button>
       `;
 
-      // EVENT + LOCAL STORAGE
+      // Event + Local Storage
       card.querySelector("button").addEventListener("click", () => {
-        cart.push({
-          name: drink.strDrink,
-          image: drink.strDrinkThumb
-        });
+        cart.push(drink.strDrink);
         localStorage.setItem("cart", JSON.stringify(cart));
         alert(`${drink.strDrink} added to cart`);
       });
 
       drinkList.appendChild(card);
     });
-  } catch (error) {
+  } catch (err) {
     drinkList.innerHTML = "<p>Failed to load drinks.</p>";
-    console.error(error);
+    console.error(err);
   }
 }
 
-// API #2 — Giphy
-async function fetchGif(drinkName) {
+// ======= Load Gallery Images from API #2 (Random Dog API for fun images) =======
+async function loadGallery() {
+  galleryGrid.innerHTML = "<p>Loading gallery...</p>";
   try {
-    const res = await fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=YOUR_API_KEY&q=${drinkName}&limit=1`
-    );
-    const data = await res.json();
-    return data.data[0]?.images.fixed_height.url || "";
-  } catch {
-    return "";
+    const urls = await Promise.all([
+      fetch("https://dog.ceo/api/breeds/image/random").then(r => r.json()),
+      fetch("https://dog.ceo/api/breeds/image/random").then(r => r.json())
+    ]);
+
+    galleryGrid.innerHTML = "";
+    urls.forEach(item => {
+      const img = document.createElement("img");
+      img.src = item.message;
+      img.alt = "Random Dog";
+      galleryGrid.appendChild(img);
+    });
+  } catch (err) {
+    galleryGrid.innerHTML = "<p>Failed to load gallery.</p>";
+    console.error(err);
   }
 }
+
+// ======= Initial Load =======
+loadDrinks();
+loadGallery();
+
+// ======= Optional: Display Cart Count in Header =======
+const header = document.querySelector("header h1");
+function updateCartCount() {
+  header.textContent = `🥤 Soda Bar App (Cart: ${cart.length})`;
+}
+updateCartCount();
+

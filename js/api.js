@@ -1,14 +1,23 @@
-export async function getSodaFlavors() {
-    return [
-        { id: 1, name: "Cherry", price: 1.5, image: "assets/images/cherry.png" },
-        { id: 2, name: "Blueberry", price: 1.7, image: "assets/images/blueberry.png" },
-        { id: 3, name: "Lemon", price: 1.4, image: "assets/images/lemon.png" }
-    ];
+// API #1 - TheCocktailDB (JSON)
+export async function getDrinks() {
+  try {
+    const res = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=soda");
+    const data = await res.json();
+    return data.drinks || [];
+  } catch (error) {
+    console.error("Error loading drinks:", error);
+    return [];
+  }
 }
 
-export async function getPromotions() {
-    return [
-        { id: 1, description: "Buy 2 get 1 free!", discount: 0.33 },
-        { id: 2, description: "10% off on orders over $5", discount: 0.1 }
-    ];
+// API #2 - Quotes REST API (JSON)
+export async function getQuotes() {
+  try {
+    const res = await fetch("https://api.quotable.io/random");
+    const data = await res.json();
+    return data.content || "Stay fizzy!";
+  } catch (error) {
+    console.error("Error loading quote:", error);
+    return "Stay fizzy!";
+  }
 }
